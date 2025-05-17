@@ -1,0 +1,50 @@
+{
+	"name": "dataflow_FF_FF",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SourceDataset_68x",
+						"type": "DatasetReference"
+					},
+					"name": "SourceBlobStorage"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "targetblobstorage",
+						"type": "DatasetReference"
+					},
+					"name": "TargetBlobStorage"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          Correlationid as string,",
+				"          Operationname as string,",
+				"          Status as string,",
+				"          Eventcategory as string,",
+				"          Level as string,",
+				"          Time as string,",
+				"          Subscription as string,",
+				"          Eventinitiatedby as string,",
+				"          Resourcetype as string,",
+				"          Resourcegroup as string,",
+				"          Resource as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> SourceBlobStorage",
+				"SourceBlobStorage sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     filePattern:'Output.csv',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> TargetBlobStorage"
+			]
+		}
+	}
+}
