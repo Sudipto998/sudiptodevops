@@ -27,13 +27,7 @@
 					},
 					"dataset": {
 						"referenceName": "githubsource",
-						"type": "DatasetReference",
-						"parameters": {
-							"p_rel_url": {
-								"value": "@pipeline().parameters.p_rel_url",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
@@ -135,11 +129,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"p_rel_url": {
-				"type": "String"
-			}
-		},
 		"annotations": []
 	}
 }
