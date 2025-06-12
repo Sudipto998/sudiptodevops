@@ -1,0 +1,9 @@
+{
+	"name": "Datafactoriesdevil",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d0233f31-3ee2-4730-96c5-fbf36a8c406f",
+		"tenantId": "9f5c018a-dedb-4cee-9d9f-eec8a7df63d3"
+	}
+}
