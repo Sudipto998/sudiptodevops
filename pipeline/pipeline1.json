@@ -27,13 +27,7 @@
 					},
 					"dataset": {
 						"referenceName": "githubsource",
-						"type": "DatasetReference",
-						"parameters": {
-							"p_rel_url": {
-								"value": "@pipeline().parameters.p_rel_url",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
@@ -83,7 +77,8 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureBlobStorageWriteSettings"
+										"type": "AzureBlobStorageWriteSettings",
+										"copyBehavior": "PreserveHierarchy"
 									},
 									"formatSettings": {
 										"type": "DelimitedTextWriteSettings",
